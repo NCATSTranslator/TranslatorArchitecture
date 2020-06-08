@@ -33,8 +33,9 @@ This README documents the current strawman architecture.  Changes must be made v
 10. Answer persistence will be the responsibility of the ARS
 11. A system-wide UI will (eventually) exist, and will allow users to interpret answers, and reformulate questions.
 12. A Translator Registry will expose programmatically accessible metadata about KPs and ARAs, and will provide testing and reports as part of a continuous integration framework.
-    1. KPs must expose machine-readable metadata describing the node and edge types that they provide, initially via a /predicates endpoint
-    2. Non-KP, Non-ARA components will also be collected in the registry, in a manner yet to be determined.
+    1. All KPs must be registered in the Translator Registry
+    2. KPs must expose machine-readable metadata describing the node and edge types that they provide, initially via a /predicates endpoint
+    3. Non-KP, Non-ARA components will also be collected in the registry, in a manner yet to be determined.
 13. Both KPs and ARAs should acquire and transmit provenance information to the fullest possible extent
 
 ## Diagram
