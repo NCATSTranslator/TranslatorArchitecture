@@ -22,9 +22,7 @@ This README documents the current strawman architecture.  Changes must be made v
     3. ARA sends query messages to KPs
     4. KPs respond to ARAs with Message
 3. All communication between components conforms to the ReasonerAPI Message spec
-4. All nodes and edges in all messages (query and response) are normalized
-    1. SRI will provide tools for normalization
-    2. KPs must use https://nodenormalization-sri.renci.org/apidocs/ and https://edgenormalization-sri.renci.org/apidocs/
+4. Entities in any message (ARS/ARA or ARA/KP) are represented using compact URIs (CURIES), which can be expanded to full IRIs using a biolink-model provided json-ld context file.
 5. ARAs and KPs may both score answers (provide scores in the message); ARAs are required to score answers
 6. KPs should not call other KPs.
 7. ARAs obtain biomedical data only via KPs (or other ARAs), not from locally-cached aggregated graphs or non-Translator data sources.
