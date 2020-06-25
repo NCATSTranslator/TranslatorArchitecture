@@ -26,8 +26,8 @@ This README documents the current strawman architecture.  Changes must be made v
     2. KP can expose their information using these methods:
        A. ReasonerAPI Message
        B. Any SmartAPI-annotated interface
-       C. A text-file dump conforming to KGX standards
-    3. Teams providing SmartAPI annotated interfaces or text-file dumps will also provide the same information via a ReasonerAPI.
+       C. A file dump conforming to KGX standards
+    3. Teams providing SmartAPI annotated interfaces or file dumps will also provide the same information via a ReasonerAPI.
     4. Subsequent requirements on KPs in this document will specify their application to ReasonerAPI, SmartAPI, and/or KGX interfaces.
 4. All nodes and edges in all messages (query and response) are normalized
     1. SRI will provide tools for normalization
