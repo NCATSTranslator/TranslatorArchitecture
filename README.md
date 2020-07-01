@@ -27,7 +27,9 @@ This README documents the current strawman architecture.  Changes must be made v
        A. ReasonerAPI Message
        B. Any SmartAPI-annotated interface
        C. A file dump conforming to KGX standards
-    3. Teams providing SmartAPI annotated interfaces or file dumps will also provide the same information via a ReasonerAPI.
+    3. The Translator consortium will develop tools to automatically 
+       A. proxy ReasonerAPI calls to smartAPI calls and 
+       B. deploy ReasonerAPIs of KGX file dumps 
     4. Subsequent requirements on KPs in this document will specify their application to ReasonerAPI, SmartAPI, and/or KGX interfaces.
 4. All nodes and edges in all messages (query and response) are normalized
     1. SRI will provide tools for normalization
