@@ -21,8 +21,17 @@ This README documents the current strawman architecture.  Changes must be made v
     2. ARAs respond to ARS with Message
     3. ARA sends query messages to KPs
     4. KPs respond to ARAs with Message
-3. All communication between components conforms to the ReasonerAPI Message spec
-4. Entities in any message (ARS/ARA or ARA/KP) are represented using compact URIs (CURIES), which must be expandable to full IRIs using a biolink-model provided json-ld context file.
+3. Interfaces:
+    1. All communication between the ARS and ARAs conforms to the ReasonerAPI Message spec
+    2. KP can expose their information using these methods:
+       A. ReasonerAPI Message
+       B. Any SmartAPI-annotated interface
+       C. A file dump conforming to KGX standards
+    3. The Translator consortium will develop tools to automatically 
+       A. proxy ReasonerAPI calls to smartAPI calls and 
+       B. deploy ReasonerAPIs of KGX file dumps 
+    4. Subsequent requirements on KPs in this document will specify their application to ReasonerAPI, SmartAPI, and/or KGX interfaces.
+4. Entities in any ReasonerAPI message (ARS/ARA or ARA/KP) or KGX file-based communication are represented using compact URIs (CURIES), which must be expandable to full IRIs using a biolink-model provided json-ld context file.
 5. ARAs and KPs may both score answers (provide scores in the message); ARAs are required to score answers
 6. KPs should not call other KPs.
 7. ARAs obtain biomedical data only via KPs (or other ARAs), not from locally-cached aggregated graphs or non-Translator data sources.
