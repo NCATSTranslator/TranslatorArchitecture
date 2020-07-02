@@ -21,7 +21,16 @@ This README documents the current strawman architecture.  Changes must be made v
     2. ARAs respond to ARS with Message
     3. ARA sends query messages to KPs
     4. KPs respond to ARAs with Message
-3. All communication between components conforms to the ReasonerAPI Message spec
+3. Interfaces:
+    1. All communication between the ARS and ARAs conforms to the ReasonerAPI Message spec
+    2. KP can expose their information using these methods:
+       A. ReasonerAPI Message
+       B. Any SmartAPI-annotated interface
+       C. A file dump conforming to KGX standards
+    3. The Translator consortium will develop tools to automatically 
+       A. proxy ReasonerAPI calls to smartAPI calls and 
+       B. deploy ReasonerAPIs of KGX file dumps 
+    4. Subsequent requirements on KPs in this document will specify their application to ReasonerAPI, SmartAPI, and/or KGX interfaces.
 4. All nodes and edges in all messages (query and response) are normalized
     1. SRI will provide tools for normalization
     2. KPs must use https://nodenormalization-sri.renci.org/apidocs/ and https://edgenormalization-sri.renci.org/apidocs/
