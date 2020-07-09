@@ -31,9 +31,7 @@ This README documents the current strawman architecture.  Changes must be made v
        A. proxy ReasonerAPI calls to smartAPI calls and 
        B. deploy ReasonerAPIs of KGX file dumps 
     4. Subsequent requirements on KPs in this document will specify their application to ReasonerAPI, SmartAPI, and/or KGX interfaces.
-4. All nodes and edges in all messages (query and response) are normalized
-    1. SRI will provide tools for normalization
-    2. KPs must use https://nodenormalization-sri.renci.org/apidocs/ and https://edgenormalization-sri.renci.org/apidocs/
+4. Entities in any ReasonerAPI message (ARS/ARA or ARA/KP) or KGX file-based communication are represented using compact URIs (CURIES), which must be expandable to full IRIs using a biolink-model provided json-ld context file.
 5. ARAs and KPs may both score answers (provide scores in the message); ARAs are required to score answers
 6. KPs should not call other KPs.
 7. ARAs obtain biomedical data only via KPs (or other ARAs), not from locally-cached aggregated graphs or non-Translator data sources.
