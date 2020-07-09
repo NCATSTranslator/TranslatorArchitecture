@@ -34,7 +34,7 @@ This README documents the current strawman architecture.  Changes must be made v
 4. Entities in any ReasonerAPI message (ARS/ARA or ARA/KP) or KGX file-based communication are represented using compact URIs (CURIES), which must be expandable to full IRIs using a biolink-model provided json-ld context file.
 5. ARAs and KPs may both score answers (provide scores in the message); ARAs are required to score answers
 6. KPs should not call other KPs.
-7. ARAs obtain biomedical data only via KPs (or other ARAs), not from locally-cached aggregated graphs or non-Translator data sources.
+7. ARAs obtain Message nodes and edges only via KPs (or other ARAs), not from locally-cached aggregated graphs or non-Translator data sources.
 8. Aggregated graphs must be created at the consortium level and exposed as a KP.
 9. Components that do not fulfill the responsibilities of KPs and ARAs can still be stand-alone elements of the architecture to provide particular functionality; such tools will use the Translator Message API whenever possible.
 10. Answer persistence will be the responsibility of the ARS
