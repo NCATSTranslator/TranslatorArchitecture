@@ -21,8 +21,18 @@ This README documents the current strawman architecture.  Changes must be made v
     2. ARAs respond to ARS with Message
     3. ARA sends query messages to KPs
     4. KPs respond to ARAs with Message
-3. All communication between components conforms to the ReasonerAPI Message spec
-4. KPs will send all nodes and edges in all messages in their "native" form, and the ARAs will be responsible for normalization
+3. Interfaces:
+    1. All communication between the ARS and ARAs conforms to the ReasonerAPI Message spec
+    2. KP can expose their information using these methods:
+       A. ReasonerAPI Message
+       B. Any SmartAPI-annotated interface
+       C. A file dump conforming to KGX standards
+    3. The Translator consortium will develop tools to automatically 
+       A. proxy ReasonerAPI calls to smartAPI calls and 
+       B. deploy ReasonerAPIs of KGX file dumps 
+    4. Subsequent requirements on KPs in this document will specify their application to ReasonerAPI, SmartAPI, and/or KGX interfaces.
+4. Entities in any ReasonerAPI message (ARS/ARA or ARA/KP) or KGX file-based communication are represented using compact URIs (CURIES), which must be expandable to full IRIs using a biolink-model provided json-ld context file.
+    KPs will send all nodes and edges in all messages in their "native" form, and the ARAs will be responsible for normalization
     1. SRI will provide tools for normalization (including prototypes at https://nodenormalization-sri.renci.org/apidocs/ and https://edgenormalization-sri.renci.org/apidocs/
 5. ARAs and KPs may both score answers (provide scores in the message); ARAs are required to score answers
 6. KPs should not call other KPs.
@@ -32,8 +42,10 @@ This README documents the current strawman architecture.  Changes must be made v
 10. Answer persistence will be the responsibility of the ARS
 11. A system-wide UI will (eventually) exist, and will allow users to interpret answers, and reformulate questions.
 12. A Translator Registry will expose programmatically accessible metadata about KPs and ARAs, and will provide testing and reports as part of a continuous integration framework.
-    1. KPs must expose machine-readable metadata describing the node and edge types that they provide, initially via a /predicates endpoint
-    2. Non-KP, Non-ARA components will also be collected in the registry, in a manner yet to be determined.
+    1. All KPs must be registered in the Translator Registry
+    2. KPs must expose machine-readable metadata describing the node and edge types that they provide, initially via a /predicates endpoint
+    3. KPs must expose machine-readable metadata describing the operations that they implement.  The method for exposing this metadata may be dependent upon the interface method (SmartAPI, ReasonerAPI, or KGX file).
+    4. Non-KP, Non-ARA components will also be collected in the registry, in a manner yet to be determined.
 13. Both KPs and ARAs should acquire and transmit provenance information to the fullest possible extent
 
 ## Diagram
