@@ -33,9 +33,7 @@ This README documents the current strawman architecture.  Changes must be made v
    4. Subsequent requirements on KPs in this document will specify their application to ReasonerAPI, SmartAPI, and/or KGX interfaces.
 4. Entities in any ReasonerAPI message (ARS/ARA or ARA/KP) or KGX file-based communication are represented using compact URIs (CURIES), which must be expandable to full IRIs using a biolink-model provided json-ld context file.  Entities returned from a non-ReasonerAPI smartAPI-registered KP must provide sufficient information in the registry to allow an automated conversion of the entity identifier to a biolink-model CURIE.
 5. Node Identifiers
-   1. KPs must expose machine readable information, via the registry, about the types of node identfiiers that they consume and produce.
-      1. A KP can indicate that it will accept any biolink-compatible identifier
-      2. A KP can indicate that it will produce  a translator-preferred identifier for concepts
+   1. KPs must expose machine readable information, via the registry, about the types of node identfiers that they consume and produce.
    2. ARAs or other integration tools such as KGX will perform node identifier equilvance translations.
    3. The consortium will produce or adopt equivalent id sets, which will be shared across Translator tools.  Multiple Translator teams will contribute expertise to these sets, but that expertise will produce centralized results.
    4. SRI will provide tools for disseminating these equivalent identifiers, drawing on the prior work of multiple Translator teams.
