@@ -33,25 +33,24 @@ This README documents the current strawman architecture.  Changes must be made v
    4. Subsequent requirements on KPs in this document will specify their application to ReasonerAPI, SmartAPI, and/or KGX interfaces.
 4. Entities in any ReasonerAPI message (ARS/ARA or ARA/KP) or KGX file-based communication are represented using compact URIs (CURIES), which must be expandable to full IRIs using a biolink-model provided json-ld context file.  Entities returned from a non-ReasonerAPI smartAPI-registered KP must provide sufficient information in the registry to allow an automated conversion of the entity identifier to a biolink-model CURIE.
 5. Node Identifiers
-   1. KPs must expose machine readable information, via the registry, about the types of node identfiers that they consume and produce.
-   2. ARAs or other integration tools such as KGX will perform node identifier equilvance translations.
+   1. KPs must expose machine readable information, via the registry, about the types of node identifiers that they consume and produce.
+   2. ARAs or other integration tools such as KGX will perform node identifier equivalence translations.
    3. The consortium will produce or adopt equivalent id sets, which will be shared across Translator tools.  Multiple Translator teams will contribute expertise to these sets, but that expertise will produce centralized results.
    4. SRI will provide tools for disseminating these equivalent identifiers, drawing on the prior work of multiple Translator teams.
-6. ARAs and KPs may both score answers (provide scores in the message); ARAs are required to score answers
+6. ARAs and KPs may both score answers (provide scores in the message); ARAs are required to score answers.
 7. KPs should not call other KPs.
 8. ARAs obtain biomedical data only via KPs (or other ARAs), not from locally-cached aggregated graphs or non-Translator data sources.
 9. Aggregated graphs must be created at the consortium level and exposed as a KP.
-10. Components that do not fulfill the responsibilities of KPs and ARAs can still be stand-alone elements of the architecture to provide particular functionality; such tools will use the Translator Message API whenever possible.
-11. Answer persistence will be the responsibility of the ARS
+10. Components that do not fulfill the responsibilities of KPs and ARAs can still be stand-alone elements of the architecture to provide particular functionality; such tools will use the Translator ReasonerAPI whenever possible.
+11. Answer persistence will be the responsibility of the ARS.
 12. A system-wide UI will (eventually) exist, and will allow users to interpret answers, and reformulate questions.
 13. A Translator Registry will expose programmatically accessible metadata about KPs and ARAs, and will provide testing and reports as part of a continuous integration framework.
     1. All KPs must be registered in the Translator Registry
     2. KPs must expose machine-readable metadata describing the node and edge types that they provide, initially via a /predicates endpoint
     3. KPs must expose machine-readable metadata describing the operations that they implement.  The method for exposing this metadata may be dependent upon the interface method (SmartAPI, ReasonerAPI, or KGX file).
     4. Non-KP, Non-ARA components will also be collected in the registry, in a manner yet to be determined.
-14. Both KPs and ARAs should acquire and transmit provenance information to the fullest possible extent
+14. Both KPs and ARAs should acquire and transmit provenance information to the fullest possible extent.
 
 ## Diagram
 
 ![ArchitectureDiagram](Architecture.png)
-
