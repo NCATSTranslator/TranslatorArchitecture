@@ -4,7 +4,7 @@
 
 We have 3 data exchange mechanisms as described in the [Architecture Principles](README.md).  In as much as possible, we want to create the same metadata for each method, and expose that metadata through a common query device: The SmartAPI registry.   Below, these methods are abbreviated as S (for SmartAPI), T (for Translator Reasoner API), and G (for Knowledge Graph Exchange).  
 
-This document describes, broadly, the particular metadata that Translator data exchange methods must or should expose. The technical details of how this metadata is specified is located (here)[] for SmartAPI-type interfaces, (here)[] for Translator Reasoner APIs, and (here)[] for Knowledge Graph Exchange files.  
+This document describes, broadly, the particular metadata that Translator data exchange methods must or should expose. The technical details of how this metadata is specified is located [here]() for SmartAPI-type interfaces, [here]() for Translator Reasoner APIs, and [here]() for Knowledge Graph Exchange files.  
 
 ## Change Management
 
