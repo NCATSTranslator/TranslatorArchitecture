@@ -48,7 +48,7 @@ This README documents the current strawman architecture.  Changes must be made v
     1. All REST-Style SmartAPI KPs must be registered in the Translator Registry.
     1. All Translator Reasoner API KPs must be registered in the Translator Registry. All metadata for Translator Reasoner APIs must be available via endpoints at the service, from which it will be extracted by the SmartAPI Registry.
     1. All KGX files intended for graph transfer must be registered in the Translator Registry. All metadata for KGX files must be contained in associated metadata files, which will be consumed by the SmartAPI Registry.
-    1. Each type of component must provide the metadata described (here)[RegistryMetadata.md]
+    1. Each type of component must provide the metadata described [here](RegistryMetadata.md)
     1. Non-KP, Non-ARA components, such as normalizers, must also be registered and provide metadata appropriate to their API type.
     1. The SmartAPI Registry will provide a unified query system, returning information about all three API methods.  This query system will allow ARAs to locate the appropriate KPs.
     1. SRI will guarantee that metadata standards across the components allow such a unified query system.
