@@ -15,7 +15,7 @@ Changes to this document must be made via pull requests.   Questions or discussi
 1. Access information (STG) 
 1. Node types (STG)
 1. Predicates (STG)
-1. Subject_node_type; predicate; object_node_type [count] (STG)
+    1. Subject_node_type; predicate; object_node_type [count] (STG)
 1. Identifier schemes (STG)
 1. Evidence / Provenance (STG)
 1. Node Properties (STG)
