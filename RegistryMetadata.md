@@ -2,7 +2,7 @@
 
 ## Introduction
 
-We have 3 data exchange mechanisms as described in the [Architecture Principles](README.md).  In as much as possible, we want to create the same metadata for each method, and expose that metadata through a common query device: The SmartAPI registry.   The SmartAPI contains a metaKG that describes the edges that each service can provide.   Most metadata relates to services that are going to expose information via the metaKG.  low, these methods are abbreviated as S (for SmartAPI), T (for Translator Reasoner API), and G (for Knowledge Graph Exchange).  
+We have 3 data exchange mechanisms as described in the [Architecture Principles](README.md).  In as much as possible, we want to create the same metadata for each method, and expose that metadata through a common query device: The SmartAPI registry.   The SmartAPI contains a metaKG that describes the edges that each service can provide.   Most metadata relates to services that are going to expose information via the metaKG.  Below, these methods are abbreviated as S (for SmartAPI), T (for Translator Reasoner API), and G (for Knowledge Graph Exchange).  
 
 Additionally, the registry will contain information about services, such as ARAs, that do not expose edges via the metaKG.  ARAs also implement the TRAPI interface, but will not expose the same metadata as KP-related TRAPI interfaces.  These ARA-style interfaces are abbreviated below as A (for ARA).
 
