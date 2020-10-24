@@ -12,15 +12,18 @@ This document describes, broadly, the particular metadata that Translator data e
 
 Changes to this document must be made via pull requests.   Questions or discussion around a topic that is not easily related to a specific pull request occurs in github issues.
 
-## Metadata
+## Provider Metadata
 
 1. Access information (STGA) 
+1. Operations (TA)
+1. Request and Response structure (S)
+
+## Content Metadata
+
 1. Node types (STG)
 1. Predicates (STG)
 1. Identifier schemes (STG)
 1. Evidence / Provenance (STG)
 1. Node Properties (STG)
 1. Edge Properties (STG)
-1. Operations (TA)
-1. Request and Response structure (S)
 1. Global Statistics (G)
