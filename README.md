@@ -44,11 +44,16 @@ This README documents the current strawman architecture.  Changes must be made v
 1. Components that do not fulfill the responsibilities of KPs and ARAs can still be stand-alone elements of the architecture to provide particular functionality; such tools will use the Translator ReasonerAPI whenever possible.
 1. Answer persistence will be the responsibility of the ARS.
 1. A system-wide UI will (eventually) exist, and will allow users to interpret answers, and reformulate questions.
-1. A Translator Registry will expose programmatically accessible metadata about KPs and ARAs, and will provide testing and reports as part of a continuous integration framework.
-    1. All KPs must be registered in the Translator Registry
-    1. KPs must expose machine-readable metadata describing the node and edge types that they provide, initially via a /predicates endpoint
-    1. KPs must expose machine-readable metadata describing the operations that they implement.  The method for exposing this metadata may be dependent upon the interface method (SmartAPI, ReasonerAPI, or KGX file).
-    1. Non-KP, Non-ARA components will also be collected in the registry, in a manner yet to be determined.
+1. The SmartAPI registry will serve as a Translator Registry, and will expose programmatically accessible metadata about KPs and ARAs.
+    1. All REST-Style SmartAPI KPs must be registered in the Translator Registry.
+    1. All Translator Reasoner API KPs must be registered in the Translator Registry. All metadata for Translator Reasoner APIs must be available via endpoints at the service, from which it will be extracted by the SmartAPI Registry.
+    1. All KGX files intended for graph transfer must be registered in the Translator Registry. All metadata for KGX files must be contained in associated metadata files and exposed via an API, which will be consumed by the SmartAPI Registry.
+    1. All ARA must be registered in the Translator Registry.  The ARS will not require a separate registration.
+    1. Each type of component must provide the metadata described [here](RegistryMetadata.md)
+    1. Non-KP, Non-ARA components, such as normalizers, must also be registered and provide metadata appropriate to their API type.
+    1. The SmartAPI Registry will provide a unified query system, returning information about all three API methods.  This query system will allow ARAs to locate the appropriate KPs.
+    1. SRI will guarantee that metadata standards across the components allow such a unified query system.
+1. A continuous integration framework will consume metadata from the registry, and provide automated testing and reports.
 1. Both KPs and ARAs should acquire and transmit provenance information to the fullest possible extent.
 
 ## Diagram
