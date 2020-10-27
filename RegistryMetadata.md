@@ -27,3 +27,4 @@ Changes to this document must be made via pull requests.   Questions or discussi
 1. Node Properties (STG)
 1. Edge Properties (STG)
 1. Global Statistics (G)
+1. Location of Knowledge Graph Data files (G)
