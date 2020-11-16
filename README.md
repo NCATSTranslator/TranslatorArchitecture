@@ -8,7 +8,7 @@ This README documents the current strawman architecture.  Changes must be made v
 
 ## Definitions
 
-  * Message: A Message object as defined in the Translator Reasoner API [here](https://github.com/NCATS-Tangerine/NCATS-ReasonerStdAPI/blob/master/API/TranslatorReasonersAPI.yaml#L88)
+  * Message: A Message object as defined in the Translator Reasoner API [here](https://github.com/NCATSTranslator/ReasonerAPI/blob/master/TranslatorReasonerAPI.yaml#L161)
   * KP (Knowledge Provider): a Translator software component, not a project team
   * ARA (Automated Relay Agent): a Translator software component, not a project team
   * KS (Knowledge Source): a non-Translator source of information that can be ingested to produce a KP.
