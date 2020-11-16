@@ -39,11 +39,11 @@ This README documents the current strawman architecture.  Changes must be made v
    1. SRI will provide tools for disseminating these equivalent identifiers, drawing on the prior work of multiple Translator teams.
 1. Edge Predicates
    1. Relationships between entities (edges) have a predicate indicating the specific type of relationship between the entities.
-   1. The biolink model will contain a set of predicates used to bridge across pre-existing predicate vocabularies
-   1. The biolink model will designate a set of such vocabularies that can be mapped to biolink predciates.
-   1. Predicates in ReasonerAPI messages and KGX files must be chosen from the biolink model.
-   1. Responses from non-ReasonerAPI smartAPI-registered KP must provide sufficient information via the registry that clients can determine the predicate as an identifier from a biolink-designated vocabulary.
-   1. As a best practice, KPs should map ingested predicates to a biolink-designated vocabulary as precisely as possible, and rely on tools to convert these predicates into biolink predicates.
+   1. The biolink model will contain a set of predicates (_biolink predicates_) used to bridge across pre-existing predicate vocabularies
+   1. The biolink model will designate a set of such vocabularies that can be mapped to biolink predciates. These vocabularies are called _biolink-mapped_.
+   1. Predicates in ReasonerAPI messages and KGX files must be biolink predicates.
+   1. Responses from non-ReasonerAPI smartAPI-registered KP must provide sufficient information via the registry that clients can determine the predicate as an identifier from a biolink-mapped vocabulary.
+   1. As a best practice, KPs should map ingested predicates to a biolink-mapped vocabulary as precisely as possible, and rely on tools to convert these predicates into biolink predicates.
    1. The SRI will provide mapping tools to perform this conversion.
 1. ARAs and KPs may both score answers (provide scores in the message); ARAs are required to score answers.
 1. KPs should not call other KPs.
