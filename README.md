@@ -63,7 +63,7 @@ This README documents the current strawman architecture.  Changes must be made v
     1. SRI will guarantee that metadata standards across the components allow such a unified query system.
     1. The SmartAPI registry will allow components to find all KPs by querying for biolink predicates. The SmartAPI registry will allow components to query by predicate from biolink-understood vocabularies, and return KPs that provide such metadata.
 1. Query graphs entering the system may be meaningfully the same as information stored in KPs, but the representation may be different, for instance using an inverse predicate, or using an subclass of an entity type, or a subpredicate.
-     1. This is primarily the ARA's responsibility to handle, but to aid ARAs
+     1. This is primarily the ARA's responsibility to handle, but to aid ARAs:
           1. The SRI will implement a library that produces class-level triples that are logically entailed by an input class-level triple
           1. This library will be incorporated into the SmartAPI registry's query, such that when an ARA queries the registry with a desired triple, the registry returns the KPs to query, along with the specific form of that query to use.
 1. A continuous integration framework will consume metadata from the registry, and provide automated testing and reports.
