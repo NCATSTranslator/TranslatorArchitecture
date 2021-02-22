@@ -47,6 +47,11 @@ This README documents the current strawman architecture.  Changes must be made v
    1. The SRI will provide mapping tools to perform this conversion.
 1. ARAs and KPs may both score answers (provide scores in the message); ARAs are required to score answers.
 1. KPs should not call other KPs.
+1. KPs that implement the Translator Reasoner API must perform the following kinds of reasoning in answering queries:
+   1. Making identifiers more specific, e.g. responding to a query involving an entity with information related to a subclass of that entity.
+   1. Making categories in a query more specific. e.g. responding to a query for a Named Thing with a particular ChemicalSubstance.
+   1. Making predicates more specific, e.g. responding to a query for “affects expression of” with an edge with predicate “increases expression of”.
+   1. Inverting predicates. e.g. responding to a query with predicate P with an edge whose predicate is the inverse of P.  
 1. ARAs obtain biomedical data only via KPs (or other ARAs), not from locally-cached aggregated graphs or non-Translator data sources.
 1. Aggregated graphs must be created at the consortium level and exposed as a KP.
 1. Components that do not fulfill the responsibilities of KPs and ARAs can still be stand-alone elements of the architecture to provide particular functionality; such tools will use the Translator ReasonerAPI whenever possible.
