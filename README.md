@@ -49,7 +49,7 @@ This README documents the current strawman architecture.  Changes must be made v
 1. KPs should not call other KPs.
 1. KPs that implement the Translator Reasoner API must perform the following kinds of reasoning in answering queries:
    1. Making identifiers more specific, e.g. responding to a query involving an entity with information related to a subclass of that entity.
-   1. Making categories in a query more specific. e.g. responding to a query for a Named Thing with a particular ChemicalSubstance.
+   1. Making categories in a query more specific. e.g. responding to a query for a biolink:NamedThing with a particular biolink:ChemicalSubstance.
    1. Making predicates more specific, e.g. responding to a query for “affects expression of” with an edge with predicate “increases expression of”.
    1. Inverting predicates. e.g. responding to a query with predicate P with an edge whose predicate is the inverse of P.  
 1. ARAs obtain biomedical data only via KPs (or other ARAs), not from locally-cached aggregated graphs or non-Translator data sources.
