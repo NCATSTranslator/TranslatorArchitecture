@@ -50,7 +50,7 @@ This README documents the current strawman architecture.  Changes must be made v
 1. KPs that implement the Translator Reasoner API must perform the following kinds of reasoning in answering queries:
    1. Making identifiers more specific, e.g. responding to a query involving an entity with information related to a subclass of that entity.
    1. Making categories in a query more specific. e.g. responding to a query for a biolink:NamedThing with a particular biolink:ChemicalSubstance.
-   1. Making predicates more specific, e.g. responding to a query for “affects expression of” with an edge with predicate “increases expression of”.  In the response, the more specific edge must occur in the knowledge_graph portion of the response, and in individual results, that more specific edge will be bound to the less specific query edge.
+   1. Making predicates more specific, e.g. responding to a query for “affects expression of” with an edge with predicate “increases expression of”.  In the response, the more specific edge must occur in the knowledge_graph portion of the response, and in individual results, that more specific edge will be bound to the less specific query edge.  Query Graph and Knowledge Graph edges need not match in either predicate or direction to be bound in an answer.
    1. Inverting predicates. e.g. responding to a query with predicate P with an edge whose predicate is the inverse of P.  
 1. ARAs obtain biomedical data only via KPs (or other ARAs), not from locally-cached aggregated graphs or non-Translator data sources.
 1. Aggregated graphs must be created at the consortium level and exposed as a KP.
