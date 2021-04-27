@@ -1,5 +1,5 @@
 # Architecture-committee-Tracking-Voting
-Weekly meetings on Tuesday's, 2 pm ET.
+Weekly meetings on Tuesdays, 2 pm ET.
 After initial formation - roster should be maintained at the consortium level Translator Committees & Working Groups
 |Committee Member Name|Committee Member Team|Role|Email|
 |--|--|--|--|
