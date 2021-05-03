@@ -68,7 +68,7 @@ This README documents the current strawman architecture.  Changes must be made v
     1. The SmartAPI registry will allow components to find all KPs by querying for biolink predicates. The SmartAPI registry will allow components to query by predicate from biolink-understood vocabularies, and return KPs that provide such metadata.
 1. A continuous integration framework will consume metadata from the registry, and provide automated testing and reports.
 1. Both KPs and ARAs should acquire and transmit provenance information to the fullest possible extent.
-1. When querying and returning results with predicates, KPs and ARAs must be queried using the 'canonical' predicate (as opposed to its inverse), and must return the 'canonical' predicate.  There will be two ways to identify the 'canonical' predicate in the biolink-model: canonical translator predicates will not be tagged with the 'inverse:' attribute, and canonical predicates will be tagged with an "annotations" flag with the tag: "biolink:canonical_predicate" and value: "True".  This principal also applies to KGX files and TrAPI messages.
+1. When querying and returning results with predicates, KPs and ARAs must be queried using the 'canonical' predicate (as opposed to its inverse), and must return the 'canonical' predicate.  There will be two ways to identify the 'canonical' predicate in the biolink-model: canonical translator predicates will not be tagged with the 'inverse:' attribute, and canonical predicates will be tagged with an "annotations" flag with the tag: "biolink:canonical_predicate" and value: "True".  This principle also applies to KGX files and TrAPI messages.
 ## Diagram
 
 ![ArchitectureDiagram](Architecture.png)
