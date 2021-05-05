@@ -72,4 +72,5 @@ This README documents the current strawman architecture.  Changes must be made v
 
 ## Diagram
 
-![ArchitectureDiagram](Architecture.png)
+![image](https://user-images.githubusercontent.com/306971/117186756-28c4da80-ada9-11eb-98e1-755da68e9552.png)
+
