@@ -50,7 +50,7 @@ This README documents the current strawman architecture.  Changes must be made v
 1. KPs that implement the Translator Reasoner API must perform the following kinds of reasoning in answering queries:
    1. Making identifiers more specific, e.g. responding to a query involving an entity with information related to a subclass of that entity.
    1. Making categories in a query more specific. e.g. responding to a query for a biolink:NamedThing with a particular biolink:ChemicalSubstance.
-   1. Making predicates more specific, e.g. responding to a query for “affects expression of” with an edge with predicate “increases expression of”.
+   1. Making predicates more specific, e.g. responding to a query for “affects expression of” with an edge with predicate “increases expression of”.  In the response, the more specific edge must occur in the knowledge_graph portion of the response, and in individual results, that more specific edge will be bound to the less specific query edge.  Query Graph and Knowledge Graph edges need not match in either predicate or direction to be bound in an answer.
 1. ARAs obtain biomedical data only via KPs (or other ARAs), not from locally-cached aggregated graphs or non-Translator data sources.
 1. Aggregated graphs must be created at the consortium level and exposed as a KP.
 1. Components that do not fulfill the responsibilities of KPs and ARAs can still be stand-alone elements of the architecture to provide particular functionality; such tools will use the Translator ReasonerAPI whenever possible.
@@ -71,4 +71,8 @@ This README documents the current strawman architecture.  Changes must be made v
 1. When querying and returning results with predicates, KPs and ARAs must be queried using the 'canonical' predicate (as opposed to its inverse), and must return the 'canonical' predicate.  There will be two ways to identify the 'canonical' predicate in the biolink-model: canonical translator predicates will not be tagged with the 'inverse:' attribute, and canonical predicates will be tagged with an "annotations" flag with the tag: "biolink:canonical_predicate" and value: "True".  This principle also applies to KGX files and TRAPI messages.
 ## Diagram
 
-![ArchitectureDiagram](Architecture.png)
+![image](https://user-images.githubusercontent.com/306971/117194943-b3f69e00-adb2-11eb-81f5-8f959d67a9b2.png)
+
+
+![image](https://user-images.githubusercontent.com/306971/117195654-8827e800-adb3-11eb-88b6-68d38cd2bdeb.png)
+
