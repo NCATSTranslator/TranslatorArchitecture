@@ -51,6 +51,7 @@ This README documents the current strawman architecture.  Changes must be made v
    1. Making identifiers more specific, e.g. responding to a query involving an entity with information related to a subclass of that entity.
    1. Making categories in a query more specific. e.g. responding to a query for a biolink:NamedThing with a particular biolink:ChemicalSubstance.
    1. Making predicates more specific, e.g. responding to a query for “affects expression of” with an edge with predicate “increases expression of”.  In the response, the more specific edge must occur in the knowledge_graph portion of the response, and in individual results, that more specific edge will be bound to the less specific query edge.  Query Graph and Knowledge Graph edges need not match in either predicate or direction to be bound in an answer.
+   1. Inverting symmetric predicates, e.g. if the KP contains information that A and B are correlated, then it should respond with that information whether the query is asked in the form A-[correlated_with]->B or B-[correlated_with]->A.
 1. ReasonerAPI best practices:
    1. When an ARA obtains an edge with the same subject, predicate, and object from two KPs, it should represent these as two edges in the knowledge_graph component of a ReasonerAPI message.
    1. ARAs are allowed to bind together knowledge_graph edges of the same or different predicates into a single result, or to create a result for each binding.
