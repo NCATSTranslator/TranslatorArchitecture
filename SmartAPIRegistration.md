@@ -11,6 +11,12 @@ Within a registration, each
 
 ## Requirements
 
+### Translator tag
+
+### x-translator element
+
+### Uptime checking
+
 ### Granularity
 
 There must be exactly one registration per infores / TRAPI version.  
