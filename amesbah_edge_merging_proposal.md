@@ -315,9 +315,7 @@ The EPC working group will have to make a final decision on how to modify provea
 
 ### Attributes
 
-Although the same underyling information is represented by two equivalent mergable edges, additional information is also encoded that must be considered, because ARA's and KP's may add their own attributes to an edge. Edge attributes may need to be structured to allow for the presentation of these attributes, as well as where those attributes came from to preserve all relevant information. This may not be an issue, given how TRAPI now allows for unlimited nesting of attributes, but a paradigm for organizing those attributes might need to be formulated.
-
-We propose that we use the included "attribute_source" field to capture the infores id of service that added the attribute. Additionally, we propose that we change attributes from a list to a dict, where the keys for the attribute are hashes of certain fields within the attribute. At the very least, the inputs for this hash should be "attribute_type_id", "value", and "value_type_id". Other fields may need be included as input, pending further investigation. This way, attributes may be compared between two equivalent edges, to ensure that attributes won't be repeated, but the also won't be lost.
+Although the same underyling information is represented by two equivalent mergable edges, additional information is also encoded that must be considered, because ARA's and KP's may add different attributes to an edge. This is accomplished by requiring edge attributes be merged by concatanating the lists of attributes, and removing any duplicates. Since edge attributes are encoded as sets in the trapi model, deduplication is straightforward. In this case, we say that two attributes are identical for deduplicaiton if and only if all fields of the attribute are identical.
 
 For instance, if an ARA receives this edge from KP_1:
 
@@ -328,20 +326,20 @@ For instance, if an ARA receives this edge from KP_1:
       "subject": "RXCUI:1544384",
       "predicate": "biolink:correlated_with",
       "object": "MONDO:0008383",
-      "attributes": {
-          "a82984": {
+      "attributes": [
+          {
               "attribute_type_id": "biolink:p_value",
               "value": 0,
               "value_type_id": "EDAM:data_1669",
-              "attribute_source": ["infores:KP_1"]
+              "attribute_source": "infores:DB"
           },
-          "a428959": {
+          {
               "attribute_type_id": "biolink:p_value",
-              "value": 6375,
+              "value": 0,
               "value_type_id": "EDAM:data_0006",
-              "attribute_source": ["infores:KP_1"]
+              "attribute_source": "infores:DP"
           },
-      },
+      ],
     },
   }
 }
@@ -356,14 +354,14 @@ And this edge from KP_2:
       "subject": "RXCUI:1544384",
       "predicate": "biolink:correlated_with",
       "object": "MONDO:0008383",
-      "attributes": {
-          "a82984": {
+      "attributes": [
+          {
               "attribute_type_id": "biolink:p_value",
               "value": 0,
               "value_type_id": "EDAM:data_1669",
-              "attribute_source": ["infores:KP_2"]
+              "attribute_source": "infores:DB"
           },
-      },
+      ],
     },
   }
 }
@@ -380,23 +378,20 @@ Then the ARA can merge these edges this way:
       "subject": "RXCUI:1544384",
       "predicate": "biolink:correlated_with",
       "object": "MONDO:0008383",
-      "attributes": {
-          "a82984": {
+      "attributes": [
+          {
               "attribute_type_id": "biolink:p_value",
               "value": 0,
               "value_type_id": "EDAM:data_1669",
-              "attribute_source": [
-                  "infores:KP_1",
-                  "infores:KP_2"
-                  ]
+              "attribute_source": "infores:DB"
           },
-          "a428959": {
+          {
               "attribute_type_id": "biolink:p_value",
-              "value": 6375,
+              "value": 0,
               "value_type_id": "EDAM:data_0006",
-              "attribute_source": ["infores:KP_1"]
+              "attribute_source": "infores:DB"
           },
-      },
+      ],
     },
   }
 }

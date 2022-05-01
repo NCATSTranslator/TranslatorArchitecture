@@ -29,20 +29,20 @@ This section shows the outputs of the three KP's.
               ]
           }
       },
-      "attributes": {
-          "a82984": {
+      "attributes": [
+          {
               "attribute_type_id": "biolink:p_value",
               "value": 0,
               "value_type_id": "EDAM:data_1669",
-              "attribute_source": ["infores:KP_1"]
+              "attribute_source": "infores:DB"
           },
-          "a428959": {
+          {
               "attribute_type_id": "biolink:p_value",
-              "value": 6375,
+              "value": 0,
               "value_type_id": "EDAM:data_0006",
-              "attribute_source": ["infores:KP_1"]
+              "attribute_source": "infores:DB"
           },
-      },
+      ],
     }
   }
 }
@@ -71,20 +71,20 @@ This section shows the outputs of the three KP's.
               ]
           }
       },
-      "attributes": {
-          "a82984": {
+      "attributes": [
+          {
               "attribute_type_id": "biolink:p_value",
               "value": 0,
               "value_type_id": "EDAM:data_1669",
-              "attribute_source": ["infores:KP_2"]
+              "attribute_source": "infores:DB"
           },
-          "a7429403": {
+          {
               "attribute_type_id": "biolink:p_value",
               "value": 0,
               "value_type_id": "EDAM:data_6109",
-              "attribute_source": ["infores:KP_2"]
+              "attribute_source": "infores:DB"
           },
-      },
+      ],
     }
   }
 }
@@ -113,20 +113,20 @@ This section shows the outputs of the three KP's.
               ]
           }
       },
-      "attributes": {
-          "a7429403": {
+      "attributes": [
+          {
               "attribute_type_id": "biolink:p_value",
               "value": 0,
               "value_type_id": "EDAM:data_6109",
-              "attribute_source": ["infores:KP_3"]
+              "attribute_source": "infores:DB"
           },
-          "a428959": {
+          {
               "attribute_type_id": "biolink:p_value",
-              "value": 6375,
+              "value": 0,
               "value_type_id": "EDAM:data_1669",
-              "attribute_source": ["infores:KP_3"]
+              "attribute_source": "infores:DB"
           }
-      },
+      ],
     }
   }
 }
@@ -181,29 +181,26 @@ This section shows the outputs of the two ARA's.
               ]
           }
       },
-      "attributes": {
-          "a82984": {
+      "attributes": [
+          {
               "attribute_type_id": "biolink:p_value",
               "value": 0,
               "value_type_id": "EDAM:data_1669",
-              "attribute_source": [
-                  "infores:KP_1",
-                  "infores:KP_2"
-                  ]
+              "attribute_source": "infores:DB"
           },
-          "a428959": {
+          {
               "attribute_type_id": "biolink:p_value",
-              "value": 6375,
+              "value": 0,
               "value_type_id": "EDAM:data_0006",
-              "attribute_source": ["infores:KP_1"]
+              "attribute_source": "infores:DB"
           },
-          "a7429403": {
+          {
               "attribute_type_id": "biolink:p_value",
               "value": 0,
               "value_type_id": "EDAM:data_6109",
-              "attribute_source": ["infores:KP_2"]
+              "attribute_source": "infores:DB"
           },
-      },
+      ],
     }
   }
 }
@@ -254,29 +251,26 @@ This section shows the outputs of the two ARA's.
               ]
           }
       },
-      "attributes": {
-          "a82984": {
+      "attributes": [
+          {
               "attribute_type_id": "biolink:p_value",
               "value": 0,
               "value_type_id": "EDAM:data_1669",
-              "attribute_source": [
-                  "infores:KP_1",
-                  "infores:KP_3"
-                  ]
+              "attribute_source": "infores:DB"
           },
-          "a428959": {
+          {
               "attribute_type_id": "biolink:p_value",
-              "value": 6375,
+              "value": 0,
               "value_type_id": "EDAM:data_0006",
-              "attribute_source": ["infores:KP_1"]
+              "attribute_source": "infores:DB"
           },
-          "a7429403": {
+          {
               "attribute_type_id": "biolink:p_value",
               "value": 0,
               "value_type_id": "EDAM:data_6109",
-              "attribute_source": ["infores:KP_3"]
+              "attribute_source": "infores:DB"
           },
-      },
+      ],
     }
   }
 }
@@ -364,33 +358,26 @@ Finally, this would be the final merged output from the WR.
               ]
           }
       },
-      "attributes": {
-          "a82984": {
+      "attributes": [
+          {
               "attribute_type_id": "biolink:p_value",
               "value": 0,
               "value_type_id": "EDAM:data_1669",
-              "attribute_source": [
-                  "infores:KP_1",
-                  "infores:KP_2",
-                  "infores:KP_3"
-                  ]
+              "attribute_source": "infores:DB"
           },
-          "a428959": {
+          {
               "attribute_type_id": "biolink:p_value",
-              "value": 6375,
+              "value": 0,
               "value_type_id": "EDAM:data_0006",
-              "attribute_source": ["infores:KP_1"]
+              "attribute_source": "infores:DB"
           },
-          "a7429403": {
+          {
               "attribute_type_id": "biolink:p_value",
               "value": 0,
               "value_type_id": "EDAM:data_6109",
-              "attribute_source": [
-                  "infores:KP_2",
-                  "infores:KP_3"
-              ]
+              "attribute_source": "infores:DB"
           },
-      },
+      ],
     }
   }
 }
