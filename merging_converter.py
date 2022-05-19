@@ -20,7 +20,8 @@ def edge_conversion(kedge):
             ksource = attribute["value"]
             attribute["attribute_type_id"] = "biolink:primary_knowledge_source"
             if provenance_tree:
-                for i in range(len(provenance_tree), 1, -1):
+                last = provenance_tree[len(provenance_tree) - 1]
+                for i in range(len(provenance_tree) - 1, 1, -1):
                     if provenance_tree[i]["resource"] == attribute.get("attribute_source"):
                         provenance_tree[1], provenance_tree[i] = provenance_tree[i], provenance_tree[1]
                     provenance_tree[i] = provenance_tree[i - 1]
@@ -28,11 +29,8 @@ def edge_conversion(kedge):
                     "resource": attribute["value"],
                     "resource_role": attribute["attribute_type_id"]
                 }
-                provenance_tree[1] = {
-                    "resource": provenance_tree[1]["resource"],
-                    "resource_role": provenance_tree[1]["resource_role"],
-                    "retrievals": provenance_tree[0]["resource"]
-                }
+                provenance_tree[1]["retrievals"] = provenance_tree[0]["resource"]
+                provenance_tree.append(last)
             else:
                 provenance_tree.append({
                     "resource": attribute["value"],
@@ -41,7 +39,8 @@ def edge_conversion(kedge):
         elif "biolink:primary_knowledge_source" == attribute["attribute_type_id"]:
             ksource = attribute["value"]
             if provenance_tree:
-                for i in range(len(provenance_tree), 1, -1):
+                last = provenance_tree[len(provenance_tree) - 1]
+                for i in range(len(provenance_tree) - 1, 1, -1):
                     if provenance_tree[i]["resource"] == attribute.get("attribute_source"):
                         provenance_tree[1], provenance_tree[i] = provenance_tree[i], provenance_tree[1]
                     provenance_tree[i] = provenance_tree[i - 1]
@@ -49,6 +48,8 @@ def edge_conversion(kedge):
                     "resource": attribute["value"],
                     "resource_role": attribute["attribute_type_id"]
                 }
+                provenance_tree[1]["retrievals"] = provenance_tree[0]["resource"]
+                provenance_tree.append(last)
             else:
                 provenance_tree.append({
                     "resource": attribute["value"],
