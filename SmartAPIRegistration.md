@@ -17,7 +17,7 @@ Translator components are registered using OpenAPI metadata as described [here](
 
 ### x-translator element
 
-The registration must contain a compliant x-translator element as described [here](https://github.com/NCATSTranslator/translator_extensions/tree/production/x-translator).  Among other things, the x-translator element defines the infores identifier for this component: an identifier that is common across environments such as dev, test, and production.
+The registration must contain a compliant x-translator element as described [here](https://github.com/NCATSTranslator/translator_extensions/tree/production/x-translator).  Among other things, the x-translator element defines the infores identifier for this component: an identifier that is common across environments such as development, testing, and production.
 
 ### Trapi tag
 
@@ -29,7 +29,7 @@ If the component implements a TRAPI interface, then the registration must contai
 
 ### Uptime checking
 
-Registrations must enable uptime checking as described [here](https://smart-api.info/faq#api-monitor).
+Registrations must enable uptime checking as described [here](https://github.com/SmartAPI/smartAPI/blob/master/docs/uptime.md).
 
 ### Granularity
 
