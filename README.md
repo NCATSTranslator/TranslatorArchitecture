@@ -54,7 +54,7 @@ This README documents the current strawman architecture.  Changes must be made v
    1. Inverting symmetric predicates, e.g. if the KP contains information that A and B are correlated, then it should respond with that information whether the query is asked in the form A-[correlated_with]->B or B-[correlated_with]->A.
 1. ReasonerAPI best practices:
    1. When an ARA obtains an edge with the same subject, predicate, and object from two KPs, it should represent these as two edges in the knowledge_graph component of a ReasonerAPI message.
-   1. An ARA result is defined by the bindings of knowledge graph nodes to input query graph nodes.  For a given set of node bindings, there can be only a single result.
+   1. An ARA result is defined by the bindings of knowledge graph nodes to input query graph nodes.  For a given set of node bindings, there can be only a single result. Two separate results MUST NOT differ only in their edge bindings, with the same set of node bindings.
 1. ARAs obtain biomedical data only via KPs (or other ARAs), not from locally-cached aggregated graphs or non-Translator data sources.
 1. Aggregated graphs must be created at the consortium level and exposed as a KP.
 1. Components that do not fulfill the responsibilities of KPs and ARAs can still be stand-alone elements of the architecture to provide particular functionality; such tools will use the Translator ReasonerAPI whenever possible.
