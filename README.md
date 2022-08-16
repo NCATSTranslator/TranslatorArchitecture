@@ -55,7 +55,7 @@ This README documents the current strawman architecture.  Changes must be made v
 1. ReasonerAPI best practices:
    1. When an ARA obtains multiple edges with the same subject, predicate, qualifiers, object, and original/primary source from KPs, it should represent these as a single edge in the knowledge_graph component of a ReasonerAPI message.
    1. An ARA or a KP must not combine edges unless they contain the same subject, predicate, qualifiers, object, and original/primary source.
-   1. ARAs are allowed to bind together knowledge_graph edges of the same or different predicates into a single result, or to create a result for each binding.
+   1. An ARA result is defined by the bindings of knowledge graph nodes to input query graph nodes.  For a given set of node bindings, there can be only a single result. Two separate results MUST NOT differ only in their edge bindings, with the same set of node bindings.
 1. ARAs obtain biomedical data only via KPs (or other ARAs), not from locally-cached aggregated graphs or non-Translator data sources.
 1. Aggregated graphs must be created at the consortium level and exposed as a KP.
 1. Components that do not fulfill the responsibilities of KPs and ARAs can still be stand-alone elements of the architecture to provide particular functionality; such tools will use the Translator ReasonerAPI whenever possible.
