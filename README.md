@@ -49,7 +49,7 @@ This README documents the current strawman architecture.  Changes must be made v
 1. KPs should not call other KPs.
 1. KPs that implement the Translator Reasoner API must perform the following kinds of reasoning in answering queries:
    1. Making identifiers more specific, e.g. responding to a query involving an entity with information related to a subclass of that entity.  
-   2. Making categories and qualifiers in a query more specific. e.g. responding to a query for a biolink:NamedThing with a particular biolink:ChemicalSubstance.
+   2. Making categories and qualifiers in a query more specific. e.g. responding to a query for a biolink:NamedThing with a particular biolink:ChemicalEntity.
    3. Making predicates more specific, e.g. responding to a query for “biolink:related_to” with an edge with predicate “biolink:affects”.  In the response, the more specific edge must occur in the knowledge_graph portion of the response, and in individual results, that more specific edge will be bound to the less specific query edge.  Query Graph and Knowledge Graph edges need not match in either predicate or direction to be bound in an answer.
    4. Making qualifiers more specific, e.g. responding to a query for "biolink:subject_aspect_qualifier":"biolink:abundance" with a more specific qualifier value, e.g. "biolink:expression".
    5. Inverting symmetric predicates, e.g. if the KP contains information that A and B are correlated, then it should respond with that information whether the query is asked in the form A-[correlated_with]->B or B-[correlated_with]->A.
