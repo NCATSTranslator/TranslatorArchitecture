@@ -37,6 +37,7 @@ This README documents the current strawman architecture.  Changes must be made v
    1. ARAs or other integration tools such as KGX will perform node identifier equivalence translations.
    1. The consortium will produce or adopt equivalent id sets, which will be shared across Translator tools.  Multiple Translator teams will contribute expertise to these sets, but that expertise will produce centralized results.
    1. SRI will provide tools for disseminating these equivalent identifiers, drawing on the prior work of multiple Translator teams.
+   1. The ARS will use these tools to normalize identifiers coming from ARAs before merging results.
 1. Edge Predicates
    1. Relationships between entities (edges) have a predicate indicating the specific type of relationship between the entities.
    1. The biolink model will contain a set of predicates (_biolink predicates_) used to bridge across pre-existing predicate vocabularies
