@@ -40,7 +40,7 @@ This README documents the current strawman architecture.  Changes must be made v
    1. The ARS will use these tools to normalize identifiers coming from ARAs before merging results.  Normalization will be performed with conflation.  Unconflated normalization may be implemented in the future, but it will require a query-time specification of conflation status, which will be passed to the ARAs.
 1. Node Properties
    1. The consortium will produce or adopt a set of node properties.  The semantics of these properties will be defined in the biolink model.  Multiple Translator teams will contribute expertise to these properties, but that expertise will produce centralized results.
-   1. The SRI will provide tools for disseminating these node properties.
+   1. The consortium will provide a central tool for disseminating these node properties.
    1. The ARS will call these tools to provide a consistent set of node properties to the UI and other clients.
 1. Edge Predicates
    1. Relationships between entities (edges) have a predicate indicating the specific type of relationship between the entities.
