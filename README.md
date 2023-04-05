@@ -57,6 +57,11 @@ This README documents the current strawman architecture.  Changes must be made v
    1. Making categories in a query more specific. e.g. responding to a query for a biolink:NamedThing with a particular biolink:ChemicalSubstance.
    1. Making predicates more specific, e.g. responding to a query for “affects expression of” with an edge with predicate “increases expression of”.  In the response, the more specific edge must occur in the knowledge_graph portion of the response, and in individual results, that more specific edge will be bound to the less specific query edge.  Query Graph and Knowledge Graph edges need not match in either predicate or direction to be bound in an answer.
    1. Inverting symmetric predicates, e.g. if the KP contains information that A and B are correlated, then it should respond with that information whether the query is asked in the form A-[correlated_with]->B or B-[correlated_with]->A.
+1. Query Modes:
+   1. As described in the TRAPI specification, edges may be queried in either "lookup" or "inferred" mode.
+   1. KPs and ARAs must respond to lookup queries by treating the query as an exact database match
+   1. ARAs must respond to inferred mode one-hops with relevant results beyond an exact database match; KPs may also provide this capability
+   1. When answering an inferred-mode query, a component must also include lookup results.
 1. ReasonerAPI best practices:
    1. When an ARA obtains multiple edges with the same subject, predicate, qualifiers, object, and original/primary source from KPs, it should represent these as a single edge in the knowledge_graph component of a ReasonerAPI message.
    1. An ARA or a KP must not combine edges unless they contain the same subject, predicate, qualifiers, object, and original/primary source.
