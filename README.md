@@ -60,7 +60,7 @@ This README documents the current strawman architecture.  Changes must be made v
 1. Query Modes:
    1. As described in the TRAPI specification, edges may be queried in either "lookup" or "inferred" mode.
    1. KPs and ARAs must respond to lookup queries by treating the query as an exact database match
-   1. ARAs must respond to inferred mode one-hops with relevant results beyond an exact database match; KPs may also provide this capability
+   1. ARAs may respond to inferred mode one-hops with relevant results beyond an exact database match; KPs may also provide this capability
    1. When answering an inferred-mode query, a component must also include lookup results.
 1. ReasonerAPI best practices:
    1. When an ARA obtains multiple edges with the same subject, predicate, qualifiers, object, and original/primary source from KPs, it should represent these as a single edge in the knowledge_graph component of a ReasonerAPI message.
